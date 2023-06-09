@@ -29,6 +29,9 @@ import { currencyId } from '../../utils/currencyId'
 import AppBody from '../AppBody'
 import { Dots } from '../Pool/styleds'
 
+import ErrorPopup from '../../components/Popups/ErrorPopup'
+
+
 enum Fields {
   TOKEN0 = 0,
   TOKEN1 = 1,
@@ -95,6 +98,8 @@ export default function PoolFinder() {
       </Text>
     </LightCard>
   )
+
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   return (
     <Trace page={InterfacePageName.POOL_PAGE} shouldLogImpression>
